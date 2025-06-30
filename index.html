@@ -344,11 +344,36 @@ function calcularTempoEstimado() {
 
 <p>
   Quando dois drones utilizam a <strong>mesma bateria</strong> (com mesma capacidade e peso), é possível prever o tempo de voo de um drone desconhecido com base na eficiência de outro,
-  pois essa métrica indica quanto o sistema aproveita a <strong> "mesma energia disponível" </strong> mesmo que adimensional.
+  pois essa métrica indica quanto o sistema aproveita a <strong> "mesma energia disponível" </strong>, ainda que de maneira adimensional.
 </p>
 <p>
   Em resumo, a eficiência adimensional mostra o quão bem um drone foi projetado para voar, valorizando leveza, boa aerodinâmica e motores otimizados — tudo isso sem depender de tempo de voo e bateria como entrada.
 </p>
+<p>
+  Para estimar o tempo de voo de um drone desconhecido (Drone X), usamos como base um <strong>drone de referência</strong> que utiliza a <strong>mesma bateria</strong>, com tempo de voo conhecido e eficiência já calculada.
+</p>
+
+<p>
+  A estimativa se baseia na ideia de que, com a mesma energia disponível, um drone mais eficiente voa por mais tempo e um menos eficiente voa por menos tempo. A equação que usamos relaciona diretamente as eficiências com o tempo conhecido:
+</p>
+
+\[
+  \text{Tempo estimado} = \frac{\text{Eficiência}_{\text{ref}} \times \text{Tempo}_{\text{ref}}}{\text{Eficiência}_X}
+\]
+
+<p>
+  Essa é uma função do tipo <strong>hiperbólica</strong>, ou seja, uma função racional da forma \( f(x) = \frac{1}{x} \). Isso significa que:
+</p>
+
+<ul>
+  <li>Quanto menor o valor da eficiência do Drone X (mais eficiente é o drone), maior será o seu tempo de voo estimado.</li>
+  <li>Quanto maior o valor da eficiência do Drone X (menos eficiente é o drone), menor será o seu tempo de voo estimado.</li>
+</ul>
+
+<p>
+  Essa característica faz com que o gráfico da estimativa de tempo de voo tenha uma curva decrescente suave, ideal para comparações visuais entre diferentes configurações de drones que usam a mesma bateria.
+</p>
+	
 </div>
 
 </body>
