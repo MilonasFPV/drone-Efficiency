@@ -58,6 +58,21 @@
     .bad { background-color: #f44336; color: white; }
     .verybad { background-color: #b71c1c; color: white; }
     a { color: #007bff; text-decoration: none; font-weight: bold; }
+
+
+#containerGrafico {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 2 / 1; /* largura:altura = 600x300 */
+  margin-top: 20px;
+}
+
+#containerGrafico canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
   </style>
 </head>
 
@@ -97,7 +112,11 @@
   <button onclick="calcularTempoEstimado()">Calcular tempo estimado</button>
 
   <div class="result" id="resultadoTempo"></div>
-  <canvas id="graficoEstimativa" style="width: 100%; max-width: 600px; height: 100%; max-height: 300px;"></canvas>
+
+  <!-- 🔽 Container com proporção fixa para o gráfico -->
+  <div id="containerGrafico">
+    <canvas id="graficoEstimativa"></canvas>
+  </div>
 </div>
 
 <!-- Script MathJax -->
