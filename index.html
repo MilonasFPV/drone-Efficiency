@@ -173,6 +173,7 @@ function calcularEficiência() {
   `;
 }
 
+
 function calcularTempoEstimado() {
   const efRef = parseFloat(document.getElementById('eficienciaRef').value);
   const tempoRef = parseFloat(document.getElementById('tempoRef').value);
@@ -265,6 +266,71 @@ function calcularTempoEstimado() {
 
 
 </script>
+
+</script>
+
+</head>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+
+</script>
+
+<!-- 🔽 Explicação sobre a métrica -->
+<div class="result" style="margin-top: 40px; background-color: #eef6ff; padding: 20px; border-radius: 8px;">
+ <h3>📘 O que é a Eficiência do Drone?</h3>
+<p>
+  A eficiência apresentada aqui é um <strong>valor adimensional</strong> que expressa o nível de otimização do sistema de propulsão do drone, independentemente da bateria utilizada.
+  Mesmo sem considerar diretamente a fonte de energia, essa métrica continua válida pois combina dois fatores fundamentais:
+</p>
+<ul>
+  <li>
+	<strong>Eficiência aerodinâmica:</strong> razão entre a massa do drone (em gramas) e a área total das hélices (em cm²).
+
+	\[
+      	\text{Ef. Aerodinâmica} = \frac{m}{N \cdot A_{\text{hélice}}}
+    	\]
+    	Onde:<br>
+   	- \( m \): massa do drone (g)<br>
+    	- \( N \): número de motores<br>
+    	- \( A_{\text{hélice}} \): área de uma hélice (cm²)	
+
+	</li>
+</p>
+  <li>
+   
+	<strong>Ef. do motor:</strong> relação geométrica entre a altura do estator e seu diâmetro (h/D).
+
+	\[
+     \text{Eficiência do Motor} = \frac{h}{D}
+   	\]
+
+	</li>
+</ul>
+<p>
+  O produto dessas duas medidas resulta em uma estimativa objetiva de desempenho, útil para comparar diferentes configurações de drones.
+</p>
+
+<p>
+  <ul>
+    <li>
+       Quanto mais proximo de<strong> zero</strong> melhor a sua eficiencia energética!
+    </li>
+   </ul>
+</p>
+
+\[
+  \text{Eficiência Total} = \left( \frac{m}{N \cdot A_{\text{hélice}}} \right) \cdot \left( \frac{h}{D} \right)
+\]
+
+<p>
+  Quando dois drones utilizam a <strong>mesma bateria</strong> (com mesma capacidade e peso), é possível prever o tempo de voo de um drone desconhecido com base na eficiência de outro,
+  pois essa métrica indica quanto o sistema aproveita a <strong> "mesma energia disponível" </strong> mesmo que adimensional.
+</p>
+<p>
+  Em resumo, a eficiência adimensional mostra o quão bem um drone foi projetado para voar, valorizando leveza, boa aerodinâmica e motores otimizados — tudo isso sem depender de tempo de voo e bateria como entrada.
+</p>
+</div>
 
 </body>
 </html>
